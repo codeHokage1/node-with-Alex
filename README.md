@@ -1,2 +1,2 @@
-# NodeJS Exercise
+# NodeJS Exercises
 Series of NodeJS Tasks
