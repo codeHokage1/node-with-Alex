@@ -1,5 +1,4 @@
-// #1 - Using a external module: tree-console
-const treeFunc = require("tree-console");
+// #2 - With recursion
 
 const obj = {
     "name": 1,
@@ -34,12 +33,26 @@ const obj3 = {
     }]
 }
 
-const tree = (name_items) => {
-    console.log(treeFunc.getStringTree([name_items], {
-        label: "name",
-        children: "items"
-    }))
+
+const tree = (name_items, i = 0, sign = '') => {
+    let j = 0;
+    let indent = " "
+    while (j < i) {
+        indent += indent;
+        j++;
+    }
+    let newSign = indent + sign
+    console.log(newSign, name_items.name);
+    if (name_items.items) {
+        name_items.items.forEach(elem => {
+            // console.log(i)
+            if (i === 0) {
+                tree(elem, i+1, '├──')
+            } else {
+                tree(elem, i+1, '  └───')
+            }
+        });
+    }
 }
 
 tree(obj3)
-
