@@ -23,3 +23,7 @@ and would return a tree-like structure in the console; with format similar to:
 └── 5
     └── 6
 ```
+
+**index.js** contains the logic that uses an external module(tree-console) to print out the tree structure
+
+**usingRecursion.js** contains the logic that employes a custom recursive functions to print out the tree structure
